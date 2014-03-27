@@ -74,8 +74,8 @@ NSString *const AMOptionsCellBadgeBackColor = @"AMOptionsCellBadgeBackColor";
 
 + (NSDictionary*)defaultOptions
 {
-	//CGFloat offsetY = SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0") ? 20.0f : 0.0f;
-	CGFloat offsetY = 0.0f;
+	CGFloat offsetY = SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0") ? 20.0f : 0.0f;
+	//CGFloat offsetY = 0.0f;
 	return @{
 			 AMOptionsTableOffsetY : @(offsetY),
              AMOptionsTableInsetX : @(0),             
@@ -142,8 +142,8 @@ NSString *const AMOptionsCellBadgeBackColor = @"AMOptionsCellBadgeBackColor";
 
 + (NSDictionary*)defaultFlatOptions
 {
-	//CGFloat offsetY = SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0") ? 20.0f : 0.0f;
-	CGFloat offsetY = 0.0f;
+	CGFloat offsetY = SYSTEM_VERSION_GREATER_THAN_OR_EQUAL_TO(@"7.0") ? 20.0f : 0.0f;
+	//CGFloat offsetY = 0.0f;
 	return @{
 			 AMOptionsTableOffsetY : @(offsetY),
              AMOptionsTableInsetX : @(0),
