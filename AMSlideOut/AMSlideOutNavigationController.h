@@ -72,6 +72,8 @@ typedef void (^AMSlideOutCompletionHandler)(void);
  */
 - (void)setSlideoutOptions:(NSDictionary *)options;
 
+- (void)emptySection:(NSInteger)section;
+
 - (void)addViewControllerToLastSection:(UIViewController*)controller tagged:(int)tag withTitle:(NSString*)title andIcon:(id)icon;
 - (void)addViewControllerToLastSection:(UIViewController*)controller tagged:(int)tag withTitle:(NSString*)title andIcon:(id)icon beforeChange:(void(^)())before onCompletition:(void(^)())after;
 - (void)addActionToLastSection:(void(^)())action tagged:(int)tag withTitle:(NSString*)title andIcon:(id)icon;

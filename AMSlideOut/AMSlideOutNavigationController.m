@@ -90,6 +90,18 @@
     [self.currentViewController.navigationItem setLeftBarButtonItem:self.barButton];
 }
 
+- (void)emptySection:(NSInteger)section
+{
+    if (section < [self.menuItems count])
+    {
+        self.menuItems[section][kSOSection] = [NSMutableArray new];
+    }
+    else
+    {
+        NSLog(@"AMSlideOutNavigation: section index out of bounds");
+    }
+}
+
 - (void)addSectionWithTitle:(NSString*)title
 {
 	[self addSectionWithTitle:title andHeaderClassName:nil withHeight:[self.options[AMOptionsHeaderHeight] floatValue]];
