@@ -239,9 +239,7 @@
 	[view setBackgroundColor:self.options[AMOptionsBackground]];
 	
 	// Table View setup
-
-    BOOL isIpad = [UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad;
-    float newHeight = isIpad ? [[UIScreen mainScreen] bounds].size.width : [[UIScreen mainScreen] bounds].size.height;
+    float newHeight = [[UIScreen mainScreen] bounds].size.height;
     newHeight -= 20; // Subtract status bar height
 
     self.tableView = [[AMTableView alloc] initWithFrame:CGRectMake([self.options[AMOptionsTableInsetX] floatValue],
