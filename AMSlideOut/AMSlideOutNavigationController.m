@@ -421,12 +421,19 @@
 	UITableViewCell* cell = [self.tableView dequeueReusableCellWithIdentifier:cellID];
 	if (cell == nil) {
 		cell = [[NSClassFromString(self.options[AMOptionsTableCellClass]) alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
-		UIView* selection = [[UIView alloc] initWithFrame:cell.frame];
-		CGRect selFrame = selection.frame;
-		selFrame.size.height =[self.options[AMOptionsTableCellHeight] floatValue];
-		selection.frame = selFrame;
-		[selection setBackgroundColor:self.options[AMOptionsSelectionBackground]];
-		cell.selectedBackgroundView = selection;
+        UIView* selection = [[UIView alloc] initWithFrame:cell.frame];
+
+        CGRect selFrame = selection.frame;
+        selFrame.size.height =[self.options[AMOptionsTableCellHeight] floatValue];
+        selection.frame = selFrame;
+        //		[selection setBackgroundColor:self.options[AMOptionsSelectionBackground]];
+        [selection setBackgroundColor:[UIColor clearColor]];
+
+        UIView *selectionMarker = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 5, CGRectGetHeight(selFrame))];
+        selectionMarker.backgroundColor = self.options[AMOptionsSelectionBackground];
+        [selection addSubview:selectionMarker];
+
+        cell.selectedBackgroundView = selection;
 	}
 	
 	((AMSlideTableCell*)cell).options = self.options;
