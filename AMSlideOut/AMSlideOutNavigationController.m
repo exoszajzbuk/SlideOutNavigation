@@ -520,8 +520,10 @@
 		[self hideSideMenu];
 		return;
 	}
-	
-	[self setContentViewController:dict[kSOController]];
+	if (_currentViewController != dict[kSOController])
+	 {	
+		[self setContentViewController:dict[kSOController]];
+	}
 	if ([self.options[AMOptionsUseDefaultTitles] boolValue]) {
 		[dict[kSOController] setTitle:dict[kSOViewTitle]];
 	}
